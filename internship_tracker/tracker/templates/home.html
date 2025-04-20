@@ -1,0 +1,196 @@
+<!-- home.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Internship Tracker</title>
+  {% load static %}
+  <!-- <link rel="stylesheet" href="{% static 'style.css' %}"> -->
+   <style>/* Reset and base styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    body {
+      background-color: #f0f2f5;
+      color: #1a1a4f;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      /* background-image: linear-gradient(to bottom right, #e6e9f0, #f0f2f5); */
+    }
+    
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    /* Header styles */
+    header {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      background-color: #ffffff;
+      border-radius: 30px;
+      margin-bottom: 40px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+    
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #1a1a4f;
+      text-decoration: none;
+    }
+    
+    .nav {
+      display: flex;
+      gap: 30px;
+    }
+    
+    .nav a {
+      text-decoration: none;
+      color: #1a1a4f;
+      font-weight: 500;
+    }
+    
+    .auth-buttons {
+      display: flex;
+      gap: 10px;
+    }
+    
+    .login-btn {
+      padding: 8px 16px;
+      background: none;
+      border: none;
+      color: #1a1a4f;
+      font-weight: 500;
+      cursor: pointer;
+    }
+    
+    .action-btn {
+      padding: 10px 20px;
+      background-color: #141466;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    
+    .action-btn:hover {
+      background-color: #0a0a4f;
+    }
+    
+    /* Main content area */
+    .main-content {
+      display: flex;
+      width: 100%;
+      margin-top: 30px;
+      gap: 40px;
+      align-items: center;
+    }
+    
+    .content-text {
+      flex: 1;
+      padding-right: 20px;
+    }
+    
+    .content-image {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+    
+    h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: #1a1a4f;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+    
+    .subtitle {
+      font-size: 1.2rem;
+      color: #666;
+      margin-bottom: 30px;
+      line-height: 1.5;
+    }
+    
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .main-content {
+        flex-direction: column;
+      }
+      
+      h1 {
+        font-size: 2.5rem;
+      }
+      
+      .content-text,
+      .content-image {
+        flex: none;
+        width: 100%;
+        padding-right: 0;
+      }
+      
+      .auth-buttons {
+        display: none;
+      }
+      
+      .nav {
+        display: none;
+      }
+      
+      header {
+        justify-content: center;
+      }
+    }
+    </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <div class="container">
+    <!-- Header similar to etail.me -->
+    <header>
+      <a href="/" class="logo">internship.tracker</a>
+      <div class="nav">
+        <a href="/submit/">Submit</a>
+        <a href="/record/">Check Records</a>
+      </div>
+      <div class="auth-buttons">
+        <!-- <button class="login-btn">Login</button> -->
+        <button class="action-btn">Start tracking</button>
+      </div>
+    </header>
+
+    <!-- Main content area with hero text and visual -->
+    <div class="main-content">
+      <div class="content-text">
+        <h1>Register your internship now!</h1>
+        <p class="subtitle">With internship.tracker, anyone can track their professional experience easily. Just start with what you know. It's that easy.</p>
+      
+        
+        <!-- Alternative action buttons -->
+        <div style="margin-top: 20px; display: flex; gap: 10px;">
+          <a href="/submit/" class="action-btn" style="text-decoration: none;">Submit Internship</a>
+          <a href="/records/" class="action-btn" style="background-color: #ff6b98; text-decoration: none;">View Records</a>
+        </div>
+      </div>
+      
+      <div class="content-image">
+        <!-- This would be an illustration similar to the etail.me image -->
+        <img src="https://www.admecindia.co.in/wp-content/uploads/2021/02/admec-internship-after-graphic-design-training-in-india.jpg" style="max-width: 100%; height: auto;">
+      </div>
+    </div>
+</body>
+</html>

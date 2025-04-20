@@ -1,0 +1,238 @@
+<!-- submit.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Submit Internship</title>
+  {% load static %}
+  <!-- <link rel="stylesheet" href="{% static 'style.css' %}"> -->
+   <style>
+    /* Submit form specific styles */
+/* These styles should be added to your existing style.css */
+
+/* Submit form container */
+.submit-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Form header */
+.form-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.form-header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a1a4f;
+  margin-bottom: 10px;
+}
+
+.form-header p {
+  color: #666;
+  font-size: 1.1rem;
+}
+
+/* Form styles */
+/* .internship-form {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  padding: 30px;
+  margin-bottom: 40px;
+} */
+
+.internship-form p {
+  margin-bottom: 20px;
+}
+
+.internship-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #1a1a4f;
+}
+
+.internship-form input[type="text"],
+.internship-form input[type="email"],
+.internship-form input[type="number"],
+.internship-form input[type="date"],
+.internship-form select,
+.internship-form textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+.internship-form input:focus,
+.internship-form select:focus,
+.internship-form textarea:focus {
+  border-color: #141466;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(20, 20, 102, 0.1);
+}
+
+.internship-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Form button */
+.submit-button {
+  display: block;
+  width: 100%;
+  padding: 14px 20px;
+  background-color: #ff6b98;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+  background-color: #0a0a4f;
+}
+
+/* Form navigation */
+.form-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #f0f2f5;
+  color: #1a1a4f;
+  border: none;
+  border-radius: 25px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.back-button svg {
+  margin-right: 8px;
+}
+
+.back-button:hover {
+  background-color: #e6e9f0;
+}
+
+/* Form feedback */
+.form-feedback {
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.form-feedback.success {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  border: 1px solid #c8e6c9;
+}
+
+.form-feedback.error {
+  background-color: #ffebee;
+  color: #c62828;
+  border: 1px solid #ffcdd2;
+}
+
+/* Form validation */
+.error-message {
+  color: #c62828;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.field-error input,
+.field-error select,
+.field-error textarea {
+  border-color: #c62828;
+}
+
+/* Form sections */
+.form-section {
+  margin-bottom: 25px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.form-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.form-section-title {
+  font-size: 1.2rem;
+  color: #1a1a4f;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .internship-form {
+    padding: 20px;
+  }
+  
+  .form-header h2 {
+    font-size: 2rem;
+  }
+}
+   </style>
+  <script src="{% static 'script.js' %}"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <div class="submit-container">
+    <!-- Simple navigation -->
+    <div class="form-nav">
+      <a href="/" class="back-button">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path d="M15 8H3.83L8.71 3.12L7.29 1.71L0 9L7.29 16.29L8.71 14.88L3.83 10H15V8Z"/>
+        </svg>
+        Back to Home
+      </a>
+      <a href="/record/" class="back-button">
+        View Records
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="margin-left: 8px;">
+          <path d="M8 0L6.59 1.41L12.17 7H0V9H12.17L6.59 14.59L8 16L16 8L8 0Z"/>
+        </svg>
+      </a>
+    </div>
+
+    <div class="form-header">
+      <h2>Internship Submission Form</h2>
+      <!-- <p>Share your internship experience and help fellow students</p> -->
+    </div>
+    
+    <!-- {% if messages %}
+    <div class="form-feedback success">
+      {% for message in messages %}
+        {{ message }}
+      {% endfor %}
+    </div>
+    {% endif %} -->
+    
+    <form name="internshipForm" method="post" onsubmit="return validateForm();" class="internship-form">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit" class="submit-button">Submit</button>
+    </form>
+  </div>
+</body>
+</html>
